@@ -1,0 +1,28 @@
+{
+	"collectionName": "components_shared_seos",
+	"info": {
+		"displayName": "SEO",
+		"icon": "search"
+	},
+	"options": {},
+	"attributes": {
+		"metaTitle": {
+			"type": "string"
+		},
+		"metaDescription": {
+			"type": "string"
+		},
+		"canonicalURL": {
+			"type": "string"
+		},
+		"metaRobots": {
+			"type": "enumeration",
+			"enum": ["noindex nofollow", "noindex", "nofollow"]
+		},
+		"metaImage": {
+			"type": "component",
+			"component": "media.image"
+		}
+	}
+}
+  

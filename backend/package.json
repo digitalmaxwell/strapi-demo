@@ -1,5 +1,5 @@
 {
-  "name": "wcg",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,16 +11,17 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.14.0-alpha.0",
-    "@strapi/plugin-users-permissions": "4.14.0-alpha.0",
+    "@strapi/plugin-graphql": "4.14.0-alpha.0",
     "@strapi/plugin-i18n": "4.14.0-alpha.0",
+    "@strapi/plugin-users-permissions": "4.14.0-alpha.0",
+    "@strapi/strapi": "4.14.0-alpha.0",
     "better-sqlite3": "8.5.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "d1d5201b-4a5b-4faf-bf63-51d2fa2adb72"
+    "uuid": "ebc432bb-281b-4e8b-9864-7f852ff120a7"
   },
   "engines": {
     "node": ">=16.0.0 <=20.x.x",
