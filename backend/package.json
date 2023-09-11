@@ -9,13 +9,14 @@
     "build": "yarn && strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "better-sqlite3": "8.5.0"
+  },
   "dependencies": {
     "@strapi/plugin-graphql": "4.14.0-alpha.0",
     "@strapi/plugin-i18n": "4.14.0-alpha.0",
     "@strapi/plugin-users-permissions": "4.14.0-alpha.0",
     "@strapi/strapi": "4.14.0-alpha.0",
-    "better-sqlite3": "8.5.0",
     "pg": "^8.11.3",
     "pg-connection-string": "^2.6.2"
   },
