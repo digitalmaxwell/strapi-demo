@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_header_super_nav_item",
+  "info": {
+    "displayName": "Super Nav Item",
+    "icon": "compass"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.link"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_spacing_spacing",
+  "info": {
+    "displayName": "Component Spacing",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "marginTop": {
+      "type": "enumeration",
+      "enum": [
+        "marginTop--none",
+        "marginTop--xs",
+        "marginTop--sm",
+        "marginTop",
+        "marginTop--lg",
+        "marginTop--xl",
+        "marginTop--custom"
+      ],
+      "required": true,
+      "default": "marginTop--custom"
+    },
+    "marginBottom": {
+      "type": "enumeration",
+      "enum": [
+        "marginBottom--none",
+        "marginBottom--xs",
+        "marginBottom--sm",
+        "marginBottom",
+        "marginBottom--lg",
+        "marginBottom--xl",
+        "marginBottom--custom"
+      ],
+      "required": true,
+      "default": "marginBottom--custom"
+    },
+    "paddingTop": {
+      "type": "enumeration",
+      "enum": [
+        "paddingTop--none",
+        "paddingTop--xs",
+        "paddingTop--sm",
+        "paddingTop",
+        "paddingTop--lg",
+        "paddingTop--xl",
+        "paddingTop--custom"
+      ],
+      "required": true,
+      "default": "paddingTop--custom"
+    },
+    "paddingBottom": {
+      "type": "enumeration",
+      "enum": [
+        "paddingBottom--none",
+        "paddingBottom--xs",
+        "paddingBottom--sm",
+        "paddingBottom",
+        "paddingBottom--lg",
+        "paddingBottom--xl",
+        "paddingBottom--custom"
+      ],
+      "required": true,
+      "default": "paddingBottom--custom"
+    }
+  }
+}

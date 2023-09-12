@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_navigation_options_responsive_nav",
+  "info": {
+    "displayName": "Navigation Options — Responsive Nav",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_header_sub_menu_link",
+  "info": {
+    "displayName": "Sub Menu Link",
+    "icon": "compass"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.link",
+      "required": true
+    }
+  }
+}

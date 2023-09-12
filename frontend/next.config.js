@@ -1,14 +1,14 @@
-/** @type {import('next').NextConfig} */
+// /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-    async rewrites() {
-      return [
-        {
-          source: '/:slug*',
-          destination: '/default-template/:slug*',
-        },
-      ];
-    },
-  };
-  
-  module.exports = nextConfig;
+// const nextConfig = {
+//     async rewrites() {
+//       return [
+//         {
+//           source: '/:slug*',
+//           destination: '/default-template/:slug*',
+//         },
+//       ];
+//     },
+//   };
+
+// module.exports = nextConfig;

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_media_media_block_body_list",
+  "info": {
+    "displayName": "Media Block Body List",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

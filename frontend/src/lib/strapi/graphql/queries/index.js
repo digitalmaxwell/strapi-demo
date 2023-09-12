@@ -131,6 +131,18 @@ export const strapiGraphqlQueryFooter = `#graphql
 	}
 `;
 
+// ======================= backgroundImage =======================
+
+export const strapiGraphqlQueryBackgroundImage = `#graphql
+  backgroundImage {
+    ${strapiGraphqlQueryImage}
+  }
+  backgroundImageMobile {
+    ${strapiGraphqlQueryImage}
+  }
+  backgroundImageAlignment
+`;
+
 // ======================= Default Lander =======================
 
 export const strapiGraphqlQueryCollectionDefaultLander = `#graphql
@@ -138,25 +150,37 @@ export const strapiGraphqlQueryCollectionDefaultLander = `#graphql
   attributes {
     pageClass
     slug
-    header {
-      data {
-        ${strapiGraphqlQueryHeader}
-      }
-    }
-    ${strapiGraphqlQuerySeo}
-    backgroundColor {
-      color
-    }
-    backgroundImage {
-      ${strapiGraphqlQueryBackgroundImage}
-    }
-    navigationOptions {
-      ${strapiGraphqlQueryNavigationOptions}
-    }
-    footer {
-      data {
-        ${strapiGraphqlQueryFooter}
-      }
-    }
+  }
+`;
+
+// ======================= Spacing =======================
+
+export const strapiGraphqlQuerySpacing = `#graphql
+  marginBottom
+  marginTop
+  paddingBottom
+  paddingTop
+`;
+
+// ======================= ComponentGlobals =======================
+
+export const strapiGraphqlQueryComponentGlobals = `#graphql
+  componentId
+  className
+  spacing {
+    ${strapiGraphqlQuerySpacing}
+  }
+`;
+
+// ======================= Media Block =======================
+
+export const strapiGraphqlQueryMediaBlock = `#graphql
+  heading
+`;
+
+export const strapiGraphqlQueryMediaBlockComponent = `#graphql
+  ...on ComponentMediaMediaBlock {
+    ${strapiGraphqlQueryComponentGlobals}
+    ${strapiGraphqlQueryMediaBlock}
   }
 `;

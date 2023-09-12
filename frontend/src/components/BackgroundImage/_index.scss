@@ -1,0 +1,38 @@
+@use "sass:math";
+@import "../../styles/scss/01-config/index";
+
+.BackgroundImage {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  &.center {
+    left: 50%;
+    transform: translateX(-55%);
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.withMobileImage {
+    display: none;
+    @media (min-width: #{$siteMax--mobile}px) {
+      display: block;
+    }
+  }
+}
+
+.BackgroundImageMobile {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  @media (min-width: #{$siteMax--mobile}px) {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_header_secondary_nav_item",
+  "info": {
+    "displayName": "Secondary Nav Item",
+    "icon": "compass",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["text", "button"],
+      "default": "text",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.link"
+    },
+    "hasSubMenu": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "subMenuLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.sub-menu-link"
+    }
+  }
+}

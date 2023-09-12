@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_background_image_background_image",
+  "info": {
+    "displayName": "Background Image",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "component",
+      "component": "media.image"
+    },
+    "backgroundImageMobile": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "component",
+      "component": "media.image"
+    },
+    "backgroundImageAlignment": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "right"
+    }
+  }
+}

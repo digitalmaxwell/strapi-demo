@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_links_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "component": "links.link",
+      "required": true
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "default2white",
+        "lightningYellow",
+        "lightningYellow2white"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": ["default", "small", "medium"]
+    },
+    "styles": {
+      "type": "enumeration",
+      "enum": ["default", "outlined", "withIcon"]
+    }
+  }
+}

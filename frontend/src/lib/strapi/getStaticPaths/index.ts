@@ -1,6 +1,19 @@
-import strapiGetCollection from '/src/lib/strapi/getCollection';
-import arrayIsValid from '/src/lib/arrayIsValid';
-import getObjectKeyByString from '/src/lib/getObjectKeyByString';
+import strapiGetCollection from "/src/lib/strapi/getCollection";
+import arrayIsValid from "/src/lib/arrayIsValid";
+import getObjectKeyByString from "/src/lib/getObjectKeyByString";
+
+/**
+ * Generates static paths for Next.js based on Strapi collections.
+ *
+ * The function fetches the specified collection from Strapi, processes the retrieved data
+ * to filter and transform the results into paths, and returns the resulting paths in a format
+ * suitable for Next.js static site generation.
+ *
+ * @param args - Contains properties necessary for fetching and processing the data.
+ * @returns An array of paths in the format { params: { id: string[] } } for Next.js static site generation.
+ *
+ * @throws Will throw an error if there's an issue with the data or paths generation.
+ */
 
 /**
  * Type definition for the arguments passed to the strapiGetStaticPaths function.
@@ -8,23 +21,9 @@ import getObjectKeyByString from '/src/lib/getObjectKeyByString';
 interface StrapiGetStaticPathsArgs {
   collection: string;
   additionalQuery?: string;
-  filter?: (item: any) => boolean;  // Update 'any' with a more specific type if possible
+  filter?: (item: any) => boolean; // Consider updating 'any' with a more specific type if possible
   slugPath: string;
 }
-
-/**
- * Generates static paths for Next.js based on Strapi collections.
- *
- * @param {StrapiGetStaticPathsArgs} args - Arguments required to fetch the data and generate paths.
- * @param {string} args.collection - The name of the Strapi collection.
- * @param {string} [args.additionalQuery] - Additional query to retrieve data from Strapi.
- * @param {(item: any) => boolean} [args.filter] - Optional filter function to filter data items.
- * @param {string} args.slugPath - The path to the slug in the data item.
- *
- * @returns {Promise<{ params: { id: string[] } }[]>} An array of paths for Next.js static site generation.
- *
- * @throws Will throw an error if the collection is not valid or paths cannot be generated.
- */
 
 const strapiGetStaticPaths = async ({
   collection,
@@ -32,61 +31,65 @@ const strapiGetStaticPaths = async ({
   filter,
   slugPath,
 }: StrapiGetStaticPathsArgs): Promise<{ params: { id: string[] } }[]> => {
-  if (collection && typeof collection === `string`) {
-    const data = await strapiGetCollection({collection, additionalQuery});
+  if (!collection || typeof collection !== `string`) {
+    throw new Error(`Invalid collection: ${collection}`);
+  }
 
-    if (arrayIsValid(data)) {
-      const paths = data
-        .filter((item) => (filter ? filter(item) : true))
-        .map((item) => {
-          const slug = getObjectKeyByString(item, slugPath);
+  const data = await strapiGetCollection({ collection, additionalQuery });
 
-          if (slug) {
-            const path = (
-              slug === `/`
-                ? []
-                : slug.startsWith(`/`)
-                ? slug.replace(`/`, ``).split(`/`)
-                : slug.split(`/`)
-            )?.filter((item: string) => !!item);
+  if (!arrayIsValid(data)) {
+    throw new Error("Received invalid data from Strapi.");
+  }
 
-            if (path) {
-              return {
-                params: {
-                  id: path,
-                },
-                // TODO: also return specific locale
-              };
-            } else {
-              throw new Error(
-                `Error in strapiGetStaticPaths: invalid path.\n\npath: ${path}`
-              );
-            }
-          } else {
-            throw new Error(
-              `Error in strapiGetStaticPaths: item must contain a valid slug.\n\n${slugPath}: ${slug}\n\ncollection: ${collection}\n\nitem: ${JSON.stringify(
-                item,
-                null,
-                2
-              )}`
-            );
-          }
-        });
+  const paths = data
+    .filter((item) => (filter ? filter(item) : true))
+    .map((item) => {
+      const slug = getObjectKeyByString(item, slugPath);
 
-      if (arrayIsValid(paths)) {
-        return paths;
-      } else {
+      if (!slug) {
         throw new Error(
-          `Error in strapiGetStaticPaths: paths is not a valid array or no paths were returned from data. Found ${paths}`
+          `Item missing valid slug.\n${slugPath}: ${slug}\nCollection: ${collection}\nItem: ${JSON.stringify(
+            item,
+            null,
+            2,
+          )}`,
         );
       }
-    }
-  } else {
+
+      const path = createPathFromSlug(slug);
+
+      if (!path) {
+        throw new Error(`Invalid path derived from slug: ${slug}`);
+      }
+
+      return { params: { id: path } };
+    });
+
+  if (!arrayIsValid(paths)) {
     throw new Error(
-      `Error in strapiGetStaticPaths: collection must be a valid string. Found ${collection}`
+      `No valid paths generated from data: ${JSON.stringify(paths, null, 2)}`,
     );
   }
-  return Promise.reject(new Error("Unexpected error in strapiGetStaticPaths"));
+
+  return paths;
+};
+
+/**
+ * Transforms a given slug into a path array suitable for Next.js.
+ *
+ * @param slug - The slug to be transformed.
+ * @returns An array representing the path or null if invalid.
+ */
+const createPathFromSlug = (slug: string): string[] | null => {
+  if (slug === "/") return [];
+
+  // Remove starting slash and split by "/"
+  const segments = slug.startsWith("/")
+    ? slug.slice(1).split("/")
+    : slug.split("/");
+
+  // Filter out any empty segments
+  return segments.filter(Boolean) || null;
 };
 
 export default strapiGetStaticPaths;

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_navigation_options_footer",
+  "info": {
+    "displayName": "Navigation Options — Footer",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

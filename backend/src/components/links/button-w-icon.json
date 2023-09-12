@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_links_button_with_icon",
+  "info": {
+    "displayName": "Button with Icon",
+    "icon": "sliders-h",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "componentId": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    },
+    "isModal": {
+      "type": "boolean",
+      "default": true
+    },
+    "iconPosition": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "default": "left"
+    },
+    "buttonIcon": {
+      "type": "component",
+      "component": "media.image"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.button",
+      "required": true
+    }
+  }
+}

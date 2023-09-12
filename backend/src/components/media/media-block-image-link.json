@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_media_images_link",
+  "info": {
+    "displayName": "Media Block Image Link",
+    "icon": "file-image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "component": "media.image",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.link",
+      "required": true
+    }
+  }
+}

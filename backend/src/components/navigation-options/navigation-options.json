@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_navigation_options_navigation_options",
+  "info": {
+    "displayName": "Navigation Options",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "navigation-options.header"
+    },
+    "footer": {
+      "type": "component",
+      "component": "navigation-options.footer"
+    },
+    "responsiveNav": {
+      "type": "component",
+      "component": "navigation-options.responsive-nav"
+    },
+    "colorTheme": {
+      "type": "component",
+      "component": "navigation-options.color-theme"
+    }
+  }
+}

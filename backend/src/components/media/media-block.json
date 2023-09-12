@@ -1,0 +1,92 @@
+{
+    "collectionName": "components_media_media_blocks",
+    "info": {
+      "displayName": "Media Block",
+      "icon": "file-image",
+      "description": ""
+    },
+    "options": {},
+    "attributes": {
+      "componentId": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      },
+      "spacing": {
+        "type": "component",
+        "component": "spacing.spacing",
+        "required": true
+      },
+      "heading": {
+        "type": "string"
+      },
+      "headingClass": {
+        "type": "string"
+      },
+      "headingType": {
+        "type": "enumeration",
+        "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
+        "default": "h3"
+      },
+      "body": {
+        "type": "richtext"
+      },
+      "bodyList": {
+        "type": "component",
+        "component": "media.media-block-body-list",
+        "repeatable": true
+      },
+      "imageLinks": {
+        "type": "component",
+        "component": "media.media-block-image-link",
+        "repeatable": true
+      },
+      "image": {
+        "type": "component",
+        "component": "media.image"
+      },
+      "mobileImage": {
+        "type": "component",
+        "component": "media.image"
+      },
+      "imageWidth": {
+        "type": "integer",
+        "default": 6,
+        "required": true,
+        "max": 12,
+        "min": 1
+      },
+      "ctas": {
+        "type": "component",
+        "repeatable": true,
+        "component": "media.media-block-cta"
+      },
+      "gridExtend": {
+        "type": "boolean"
+      },
+      "rowExtend": {
+        "type": "boolean"
+      },
+      "reverse": {
+        "type": "boolean"
+      },
+      "imageExtend": {
+        "type": "boolean"
+      },
+      "align": {
+        "type": "enumeration",
+        "enum": ["left", "center"],
+        "default": "center"
+      },
+      "responsiveTextAlign": {
+        "type": "enumeration",
+        "enum": ["left", "center"],
+        "default": "left"
+      },
+      "maxContentWidth": {
+        "type": "string"
+      }
+    }
+  }
+  

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_header_primary_nav_item",
+  "info": {
+    "displayName": "Primary Nav Item",
+    "icon": "compass"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.link"
+    },
+    "hasSubMenu": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "subMenuLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.sub-menu-link"
+    }
+  }
+}

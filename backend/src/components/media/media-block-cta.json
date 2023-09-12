@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_media_media_block_ctas",
+  "info": {
+    "displayName": "Media Block CTA",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ctaType": {
+      "type": "enumeration",
+      "enum": ["button", "text"],
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "links.link",
+      "required": true
+    }
+  }
+}

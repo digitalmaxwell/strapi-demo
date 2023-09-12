@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_colors_colors",
+  "info": {
+    "displayName": "Bolt Colors",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "boltBlack",
+        "white",
+        "gray_200",
+        "gray_400",
+        "gray_600",
+        "gray_700",
+        "gray_800",
+        "lightningYellow",
+        "lightningYellowDark",
+        "blue",
+        "pink",
+        "green",
+        "purple"
+      ],
+      "required": true,
+      "default": "white"
+    }
+  }
+}

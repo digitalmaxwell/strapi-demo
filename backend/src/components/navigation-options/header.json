@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_navigation_options_header",
+  "info": {
+    "displayName": "Navigation Options — Header",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

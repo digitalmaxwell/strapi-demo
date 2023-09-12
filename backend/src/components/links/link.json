@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_links_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": ["_blank"]
+    },
+    "rel": {
+      "type": "enumeration",
+      "enum": [
+        "noopener noreferrer nofollow",
+        "noopener noreferrer",
+        "noopener",
+        "noreferrer",
+        "nofollow"
+      ]
+    },
+    "ariaLabel": {
+      "type": "string"
+    }
+  }
+}

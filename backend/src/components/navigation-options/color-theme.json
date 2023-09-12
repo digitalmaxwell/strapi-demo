@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_navigation_options_color_theme",
+  "info": {
+    "displayName": "Navigation Options — Color Theme",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": ["light", "medium", "dark", "yellow"],
+      "default": "light",
+      "required": true
+    }
+  }
+}
