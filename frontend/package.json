@@ -11,17 +11,24 @@
     "prettier": "npx prettier --write ."
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.0",
+    "@next/bundle-analyzer": "^14.1.0",
+    "@next/mdx": "^14.1.0",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "compression-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.10.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "html-react-parser": "^4.2.2",
+    "mini-css-extract-plugin": "^2.7.7",
     "next": "13.4.19",
     "node-fetch": "^3.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.66.1",
+    "sass-loader": "^14.1.0",
     "typescript": "5.2.2"
   },
   "devDependencies": {

@@ -22,8 +22,8 @@ const Image: React.FC<ImageProps> = ({
     rootMargin: "0px 0px 50% 0px",
     threshold: 0,
   },
-  onEnter = () => {},
-  onLeave = () => {},
+  onEnter = () => { },
+  onLeave = () => { },
   src,
   ...otherProps
 }) => {
@@ -66,7 +66,7 @@ const Image: React.FC<ImageProps> = ({
     return (
       <img
         ref={imageRef}
-        src={`${lazy && !isVisible ? `/assets/images/blank.gif` : src}`}
+        src={`${lazy && !isVisible ? `/assets/images/blank.gif` : process.env.NODE_ENV === 'development' ? 'http://localhost:1337' + src : src}`}
         alt={alt}
         loading={`${lazy ? `lazy` : `eager`}`}
         {...otherProps}

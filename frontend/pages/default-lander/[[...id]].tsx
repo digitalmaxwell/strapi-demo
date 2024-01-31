@@ -117,8 +117,6 @@ export const getStaticProps = async (context: StaticPropsContext) => {
     slugPath,
   });
 
-  console.log('id', id)
-
   // Step 3: Construct and Execute GraphQL Query
   const query = `#graphql
       query {
@@ -198,11 +196,10 @@ const DefaultLander = (
 
   return (
     <div
-      className={`${pageClass ? pageClass : ``} ${
-        backgroundColor?.color
+      className={`${pageClass ? pageClass : ``} ${backgroundColor?.color
           ? `backgroundColor--${backgroundColor.color}`
           : ``
-      }`}
+        }`}
     >
       {/* Inject meta tags and SEO content based on Strapi data */}
       <StrapiMeta seo={...props.pageData.data.defaultLander.data.attributes} />

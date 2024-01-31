@@ -176,6 +176,32 @@ export const strapiGraphqlQueryComponentGlobals = `#graphql
 
 export const strapiGraphqlQueryMediaBlock = `#graphql
   heading
+  headingClass
+  headingType
+  body
+  bodyList {
+    heading
+    body
+  }
+  imageWidth
+  gridExtend
+  rowExtend
+  imageExtend
+  reverse
+  image {
+    ${strapiGraphqlQueryImage}
+  }
+
+  ctas {
+    ctaType
+    text
+    link {
+      ${strapiGraphqlQueryLink}
+    }
+  }
+  maxContentWidth
+  align
+  responsiveTextAlign
 `;
 
 export const strapiGraphqlQueryMediaBlockComponent = `#graphql

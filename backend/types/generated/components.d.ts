@@ -282,10 +282,13 @@ export interface MediaMediaBlock extends Schema.Component {
     mobileImage: Attribute.Component<'media.image'>;
     imageWidth: Attribute.Integer &
       Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 12;
-      }> &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 12;
+        },
+        number
+      > &
       Attribute.DefaultTo<6>;
     ctas: Attribute.Component<'media.media-block-cta', true>;
     gridExtend: Attribute.Boolean;
@@ -440,7 +443,7 @@ export interface SpacingSpacing extends Schema.Component {
   };
 }
 
-declare module '@strapi/strapi' {
+declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'background-image.background-image': BackgroundImageBackgroundImage;
